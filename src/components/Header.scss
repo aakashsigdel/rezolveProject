@@ -1,0 +1,26 @@
+@import "../variables";
+
+.user-container {
+  display: flex;
+  flex-direction: row;
+  margin-right: 30px;
+  margin-top: 5px;
+}
+.profile-picture {
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  background-color: $placeholder;
+}
+
+.user-description {
+  margin-left: 20px;
+}
+
+.user-name {
+  font-weight: bold;
+}
+
+.books-number {
+  color: $quantity;
+}

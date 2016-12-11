@@ -12,7 +12,7 @@ module.exports = {
     path: path.resolve(__dirname, '../dist'),
     filename: 'bundle.js'
   },
-  devtool: 'source-map',
+  devtool: 'cheap-module-eval-source-map',
   module: {
     loaders: [
       {
@@ -20,8 +20,8 @@ module.exports = {
         loader: 'babel',
         include: path.resolve(__dirname, '../src')
       }, {
-        test: /\.css$/, // Only .css files
-        loader: 'style!css' // Run both loaders
+        test: /\.scss$/, // Only .scss files
+        loader: 'style!css!autoprefixer?browsers=last 2 version!sass'
       }
     ]
   },

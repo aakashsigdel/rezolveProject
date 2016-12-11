@@ -12,14 +12,18 @@
   "author": "Aakash Sigdel",
   "license": "MIT",
   "dependencies": {
+    "autoprefixer-loader": "^3.2.0",
     "moment": "2.11.2",
+    "node-sass": "^4.0.0",
     "ramda": "^0.22.1",
     "react": "0.14.7",
+    "react-bootstrap": "^0.30.7",
     "react-dom": "0.14.7",
     "react-redux": "^4.4.6",
     "react-router": "^3.0.0",
     "redux": "^3.6.0",
-    "redux-thunk": "^2.1.0"
+    "redux-thunk": "^2.1.0",
+    "sass-loader": "^4.0.2"
   },
   "devDependencies": {
     "babel": "6.5.2",
