@@ -1,0 +1,58 @@
+exports[`test should render <Header /> correctly 1`] = `
+<nav
+  className="navbar navbar-default">
+  <div
+    className="container">
+    <div
+      className="navbar-header">
+      <a
+        className="navbar-brand"
+        href="#">
+        Rezolve Books
+      </a>
+      <button
+        className="navbar-toggle collapsed"
+        onClick={[Function]}
+        type="button">
+        <span
+          className="sr-only">
+          Toggle navigation
+        </span>
+        <span
+          className="icon-bar" />
+        <span
+          className="icon-bar" />
+        <span
+          className="icon-bar" />
+      </button>
+    </div>
+    <div
+      className="navbar-form navbar-left">
+      <div
+        className="form-group">
+        <input
+          className="form-control"
+          id={undefined}
+          placeholder="Search"
+          type="text" />
+      </div>
+    </div>
+    <div
+      className="pull-right user-container">
+      <div
+        className="profile-picture" />
+      <div
+        className="user-description">
+        <div
+          className="user-name">
+          John Doe
+        </div>
+        <div
+          className="books-number">
+          10 books
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+`;
