@@ -1,0 +1,74 @@
+exports[`test should render <MyBooks /> correctly 1`] = `
+<div
+  className="books-container">
+  <div
+    className="book-container">
+    <img
+      className="book-thumbnail book-thumbnail-loading"
+      src="https://covers.openlibrary.org/b/id/295577-M.jpg" />
+    <div
+      className="book-detail-container">
+      <div
+        className="book-title-container">
+        <div
+          className="book-title">
+          I am here
+        </div>
+        <img
+          className="book-title-dots"
+          src="../../images/dots.png" />
+      </div>
+      <div
+        className="book-author">
+        John Doe
+      </div>
+    </div>
+  </div>
+  <div
+    className="book-container">
+    <img
+      className="book-thumbnail book-thumbnail-loading"
+      src="https://covers.openlibrary.org/b/id/295577-M.jpg" />
+    <div
+      className="book-detail-container">
+      <div
+        className="book-title-container">
+        <div
+          className="book-title">
+          Phones will be alwa...
+        </div>
+        <img
+          className="book-title-dots"
+          src="../../images/dots.png" />
+      </div>
+      <div
+        className="book-author">
+        Klio Author Sir
+      </div>
+    </div>
+  </div>
+  <div
+    className="book-container">
+    <img
+      className="book-thumbnail book-thumbnail-loading"
+      src="https://covers.openlibrary.org/b/id/295577-M.jpg" />
+    <div
+      className="book-detail-container">
+      <div
+        className="book-title-container">
+        <div
+          className="book-title">
+          There will be water...
+        </div>
+        <img
+          className="book-title-dots"
+          src="../../images/dots.png" />
+      </div>
+      <div
+        className="book-author">
+        Olivia Dolo
+      </div>
+    </div>
+  </div>
+</div>
+`;

@@ -5,17 +5,19 @@ exports[`test should render <RightNav /> correctly 1`] = `
     className="title">
     RECENT SEARCHES
   </div>
-  <div
-    className="recent-search">
-    sun
-  </div>
-  <div
-    className="recent-search">
-    moon
-  </div>
-  <div
-    className="recent-search">
-    earth
+  <div>
+    <div
+      className="recent-search">
+      Sun
+    </div>
+    <div
+      className="recent-search">
+      Moon
+    </div>
+    <div
+      className="recent-search">
+      Earth
+    </div>
   </div>
 </div>
 `;

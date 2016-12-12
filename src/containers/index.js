@@ -2,9 +2,30 @@ import React from 'react'
 import { Col, Grid, Row } from 'react-bootstrap'
 import Header from '../components/Header'
 import RightNav from '../components/RightNav'
+import MyBooks from '../components/MyBooks'
 
 require('./index.scss')
 
+export const books = [
+  {
+    ISBN: 111,
+    author: 'John Doe',
+    title: 'I am here',
+    thumbnail_url: 'https://covers.openlibrary.org/b/id/295577-M.jpg'
+  },
+  {
+    ISBN: 112,
+    author: 'Klio Author Sir',
+    title: 'Phones will be always be gone',
+    thumbnail_url: 'https://covers.openlibrary.org/b/id/295577-M.jpg'
+  },
+  {
+    ISBN: 113,
+    author: 'Olivia Dolo',
+    title: 'There will be water in the water',
+    thumbnail_url: 'https://covers.openlibrary.org/b/id/295577-M.jpg'
+  }
+]
 const RootContainer = () =>
     <Grid>
       <Row>
@@ -12,11 +33,12 @@ const RootContainer = () =>
           <Header />
         </Col>
       </Row>
-      <Row>
-        <Col md={3} lg={3} className="col-with-border">
+      <Row className="fill-page">
+        <Col md={3} lg={3} className="col-with-border fill-page">
           <RightNav recentSearches={['hen', 'duck', 'turtle']} />
         </Col>
-        <Col xs={12} md={9} lg={9}>
+        <Col xs={12} md={9} lg={9} className="fill-page">
+          <MyBooks books={books} />
         </Col>
       </Row>
     </Grid>
