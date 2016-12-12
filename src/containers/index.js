@@ -1,6 +1,7 @@
 import React from 'react'
 import { Col, Grid, Row } from 'react-bootstrap'
 import Header from '../components/Header'
+import RightNav from '../components/RightNav'
 
 require('./index.scss')
 
@@ -13,8 +14,7 @@ const RootContainer = () =>
       </Row>
       <Row>
         <Col md={3} lg={3} className="col-with-border">
-          aakash
-          sigdel
+          <RightNav recentSearches={['hen', 'duck', 'turtle']} />
         </Col>
         <Col xs={12} md={9} lg={9}>
         </Col>

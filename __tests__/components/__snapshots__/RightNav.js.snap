@@ -1,0 +1,21 @@
+exports[`test should render <RightNav /> correctly 1`] = `
+<div
+  className="recent-searches">
+  <div
+    className="title">
+    RECENT SEARCHES
+  </div>
+  <div
+    className="recent-search">
+    sun
+  </div>
+  <div
+    className="recent-search">
+    moon
+  </div>
+  <div
+    className="recent-search">
+    earth
+  </div>
+</div>
+`;

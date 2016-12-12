@@ -1,0 +1,17 @@
+@import '../variables';
+
+.recent-searches {
+  margin-left: 25px;
+  margin-top: 20px;
+}
+
+.title {
+  font-weight: bold;
+  color: $nav_font;
+}
+
+.recent-search {
+  color: $nav_font;
+  font-size: 1.28em;
+  margin: 10px 0px 10px 5px;
+}
