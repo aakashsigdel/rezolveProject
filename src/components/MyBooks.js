@@ -1,6 +1,9 @@
 import React from 'react'
 
-require('./MyBooks.scss')
+//FIXME delete this use data from store
+import { books } from '../containers'
+
+import './MyBooks.scss'
 
 const tempTitleFormat = title => title.length > 22 ? title.slice(0, 19) + '...' : title
 
@@ -25,7 +28,7 @@ const Book = props =>
     props.isLoading
       ? <Loader />
       : <div className="books-container">
-          {props.books.map(book => <Book key={book.ISBN}  {...book} />)}
+          {books.map(book => <Book key={book.ISBN}  {...book} />)}
         </div>
 
 export default MyBooks

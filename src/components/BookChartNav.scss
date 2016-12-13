@@ -1,0 +1,23 @@
+@import '../variables';
+
+.nav-container {
+  display: flex;
+  margin-top: 20px;
+}
+
+.nav-link {
+  font-size: 18px;
+  color: $nav_font;
+}
+
+.nav-link-active {
+  font-size: 18px;
+  font-weight: bold;
+  color: $active;
+}
+
+.nav-element-separator {
+  font-size: 18px;
+  font-weight: bold;
+  color: $nav_font;
+}

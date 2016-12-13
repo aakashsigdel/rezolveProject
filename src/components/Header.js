@@ -1,7 +1,7 @@
 import React from 'react'
 import { NavItem, Button, Nav, Navbar, FormGroup, FormControl } from 'react-bootstrap'
 
-require('./Header.scss')
+import './Header.scss'
 
 const Header = (props) =>
   <Navbar>
@@ -15,6 +15,8 @@ const Header = (props) =>
         <FormGroup>
           <FormControl type="text" placeholder="Search" />
         </FormGroup>
+        {' '}
+        <Button type="submit">Search</Button>
       </Navbar.Form>
       <div className="pull-right user-container">
         <div className="profile-picture" />

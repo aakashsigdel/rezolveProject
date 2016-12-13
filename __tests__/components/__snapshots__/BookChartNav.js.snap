@@ -1,0 +1,21 @@
+exports[`test should render <BookChartNav /> correctly 1`] = `
+<div
+  className="nav-container">
+  <a
+    className="nav-link"
+    onClick={[Function]}
+    style={Object {}}>
+    MY BOOKS
+  </a>
+  <div
+    className="nav-element-separator">
+      |  
+  </div>
+  <a
+    className="nav-link"
+    onClick={[Function]}
+    style={Object {}}>
+    CHARTS
+  </a>
+</div>
+`;

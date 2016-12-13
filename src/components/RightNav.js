@@ -1,6 +1,6 @@
 import React from 'react'
 
-require('./RightNav.scss')
+import './RightNav.scss'
 
 const RecentSearch = props =>
   <div className="recent-search">

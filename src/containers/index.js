@@ -3,8 +3,9 @@ import { Col, Grid, Row } from 'react-bootstrap'
 import Header from '../components/Header'
 import RightNav from '../components/RightNav'
 import MyBooks from '../components/MyBooks'
+import BookChartNav from '../components/BookChartNav'
 
-require('./index.scss')
+import './index.scss'
 
 export const books = [
   {
@@ -26,7 +27,7 @@ export const books = [
     thumbnail_url: 'https://covers.openlibrary.org/b/id/295577-M.jpg'
   }
 ]
-const RootContainer = () =>
+const RootContainer = props =>
     <Grid>
       <Row>
         <Col md={12} lg={12}>
@@ -38,7 +39,8 @@ const RootContainer = () =>
           <RightNav recentSearches={['hen', 'duck', 'turtle']} />
         </Col>
         <Col xs={12} md={9} lg={9} className="fill-page">
-          <MyBooks books={books} />
+          <BookChartNav />
+          {props.children}
         </Col>
       </Row>
     </Grid>
