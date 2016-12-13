@@ -1,11 +1,12 @@
 import React from 'react'
+import { connect } from 'react-redux'
 
 //FIXME delete this use data from store
 import { books } from '../containers'
 
 import './MyBooks.scss'
 
-const tempTitleFormat = title => title.length > 22 ? title.slice(0, 19) + '...' : title
+const titleFormat = title => title.length > 22 ? title.slice(0, 19) + '...' : title
 
 const Loader = () =>
   <div className="loader">
@@ -14,21 +15,24 @@ const Loader = () =>
 
 const Book = props =>
   <div className="book-container">
-    <img src={props.thumbnail_url} className="book-thumbnail book-thumbnail-loading" />
+    <img src={props.cover_image} className="book-thumbnail book-thumbnail-loading" />
     <div className="book-detail-container">
       <div className="book-title-container">
-        <div className="book-title">{tempTitleFormat(props.title)}</div>
+        <div className="book-title">{titleFormat(props.title)}</div>
         <img src="../../images/dots.png" className="book-title-dots" />
       </div>
-      <div className="book-author">{props.author}</div>
+      <div className="book-author">{props.author_name ? props.author_name : 'Not Found'}</div>
     </div>
   </div>
 
-  const MyBooks = props =>
-    props.isLoading
+  const MyBooks = props => {
+    return props.isLoading
       ? <Loader />
       : <div className="books-container">
-          {books.map(book => <Book key={book.ISBN}  {...book} />)}
+          {props.books.map(book => <Book key={book.key}  {...book} />)}
         </div>
+  }
 
-export default MyBooks
+const mapStateToProps = state => ({...state.books})
+
+export default connect(mapStateToProps)(MyBooks)
