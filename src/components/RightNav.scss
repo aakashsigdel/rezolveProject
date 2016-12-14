@@ -11,7 +11,14 @@
 }
 
 .recent-search {
+  display: block;
   color: $nav_font;
-  font-size: 1.28em;
+  font-size: 18px;
   margin: 10px 0px 10px 5px;
+}
+
+.recent-search-link-active {
+  font-size: 18px;
+  font-weight: bold;
+  color: $active;
 }

@@ -29,7 +29,7 @@ describe('books actions', () => {
       .reply(200, {docs: [raw_book]})
 
     const expectedActions = [
-      {type: 'SEARCH_BOOKS_REQUEST'},
+      {type: 'SEARCH_BOOKS_REQUEST', searchText: 'hello'},
       {type: 'RECEIVE_BOOKS', books: [book]}
     ]
 

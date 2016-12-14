@@ -3,7 +3,7 @@ import Api from '../api'
 
 export const searchBooks = searchText => {
   return (dispatch, getState) => {
-    dispatch({type: 'SEARCH_BOOKS_REQUEST'})
+    dispatch(searchBooksRequest(searchText))
     return Api.searchBooks(searchText)
       .then(json => dispatch(receiveBooks(json)))
   }
@@ -23,6 +23,11 @@ const pickKeyForBooks = compose(
   slice(0, 20),
   prop('docs')
 )
+
+export const searchBooksRequest = searchText => ({
+  type: 'SEARCH_BOOKS_REQUEST',
+  searchText
+})
 
 const receiveBooks = books => ({
   type: 'RECEIVE_BOOKS',

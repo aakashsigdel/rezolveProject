@@ -6,18 +6,33 @@ exports[`test should render <RightNav /> correctly 1`] = `
     RECENT SEARCHES
   </div>
   <div>
-    <div
-      className="recent-search">
-      Sun
-    </div>
-    <div
-      className="recent-search">
-      Moon
-    </div>
-    <div
-      className="recent-search">
-      Earth
-    </div>
+    <a
+      onClick={[Function]}
+      style={Object {}}>
+      <div
+        className="recent-search"
+        onClick={[Function]}>
+        Sun
+      </div>
+    </a>
+    <a
+      onClick={[Function]}
+      style={Object {}}>
+      <div
+        className="recent-search"
+        onClick={[Function]}>
+        Moon
+      </div>
+    </a>
+    <a
+      onClick={[Function]}
+      style={Object {}}>
+      <div
+        className="recent-search"
+        onClick={[Function]}>
+        Earth
+      </div>
+    </a>
   </div>
 </div>
 `;

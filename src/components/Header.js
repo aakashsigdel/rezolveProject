@@ -4,9 +4,14 @@ import { Link } from 'react-router'
 import { NavItem, Button, Nav, Navbar, FormGroup, FormControl } from 'react-bootstrap'
 import { searchChangeText } from '../actions/search'
 import { searchBooks } from '../actions/books'
+import { searchWillSearch } from '../actions/search'
 
 import './Header.scss'
 
+const  handleSearch = (props) => {
+  props.dispatch(searchBooks(props.searchText))
+  props.dispatch(searchWillSearch(props.searchText))
+}
 export const Header = (props) =>
   <Navbar>
     <Navbar.Header>
@@ -25,7 +30,7 @@ export const Header = (props) =>
         </FormGroup>
         {' '}
         <Link to={"/search/" + props.searchText}>
-          <Button onClick={() => props.dispatch(searchBooks(props.searchText))}>
+          <Button onClick={() => handleSearch(props)}>
             Search
           </Button>
         </Link>

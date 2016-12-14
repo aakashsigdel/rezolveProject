@@ -12,3 +12,8 @@ div.col-with-border {
 div.fill-page {
   height: 100vh;
 }
+
+a:focus {
+  color: $active;
+  text-decoration: none;
+}

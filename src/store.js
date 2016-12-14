@@ -9,7 +9,8 @@ const store = createStore(rootReducer, persistedState, composeEnhancers(applyMid
 
 store.subscribe(() => {
   saveState({
-    mybooks: store.getState().mybooks
+    mybooks: store.getState().mybooks,
+    search: store.getState().search
   })
 })
 

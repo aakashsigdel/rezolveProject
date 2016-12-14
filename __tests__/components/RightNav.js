@@ -1,5 +1,5 @@
 import React from 'react'
-import RightNav from '../../src/components/RightNav'
+import { RightNav } from '../../src/components/RightNav'
 
 import renderer from 'react-test-renderer'
 
