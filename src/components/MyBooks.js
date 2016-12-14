@@ -13,6 +13,13 @@ const Loader = () =>
     <img src={'../../images/loading.gif'} className="loader-image" />
   </div>
 
+const EmptyResult = () =>
+  <div className="books-container">
+    <div className="book-not-found">
+      0 books here! Search for a book from the search bar
+    </div>
+  </div>
+
 const Book = props =>
   <div className="book-container">
     <img src={props.cover_image} className="book-thumbnail book-thumbnail-loading" />
@@ -26,13 +33,23 @@ const Book = props =>
   </div>
 
   const MyBooks = props => {
-    return props.isLoading
-      ? <Loader />
-      : <div className="books-container">
-          {props.books.map(book => <Book key={book.key}  {...book} />)}
-        </div>
+    const books = props.params.search ? props.books : props.mybooks
+    if (books.isLoading) {
+      return <Loader />
+    }
+    else {
+      if (books.books.length === 0) {
+        return <EmptyResult />
+      } else {
+        return(
+          <div className="books-container">
+            {books.books.map(book => <Book key={book.key}  {...book} />)}
+          </div>
+        )
+      }
+    }
   }
 
-const mapStateToProps = state => ({...state.books})
+const mapStateToProps = state => ({ ...state })
 
 export default connect(mapStateToProps)(MyBooks)
