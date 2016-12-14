@@ -1,4 +1,6 @@
-const API_HOST = 'https://openlibrary.org'
+import fetch from 'isomorphic-fetch'
+
+export const API_HOST = 'https://openlibrary.org'
 
 class Api {
   _basicRequest = path => {

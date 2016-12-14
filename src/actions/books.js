@@ -4,12 +4,12 @@ import Api from '../api'
 export const searchBooks = searchText => {
   return (dispatch, getState) => {
     dispatch({type: 'SEARCH_BOOKS_REQUEST'})
-    Api.searchBooks(searchText)
+    return Api.searchBooks(searchText)
       .then(json => dispatch(receiveBooks(json)))
   }
 }
 
-const getCoverImage = coverEditionKey =>
+export const getCoverImage = coverEditionKey =>
   !!coverEditionKey
     ? `https://covers.openlibrary.org/b/olid/${coverEditionKey}-M.jpg`
     : 'http://placehold.it/180x298?text=No Image Found'
