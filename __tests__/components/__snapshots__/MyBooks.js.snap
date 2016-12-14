@@ -2,10 +2,11 @@ exports[`test should render <MyBooks /> correctly 1`] = `
 <div
   className="books-container">
   <div
-    className="book-container">
+    className="book-container book-container-overlay"
+    onClick={[Function]}>
     <img
       className="book-thumbnail book-thumbnail-loading"
-      src="https://covers.openlibrary.org/b/id/295577-M.jpg" />
+      src={undefined} />
     <div
       className="book-detail-container">
       <div
@@ -20,15 +21,16 @@ exports[`test should render <MyBooks /> correctly 1`] = `
       </div>
       <div
         className="book-author">
-        John Doe
+        Not Found
       </div>
     </div>
   </div>
   <div
-    className="book-container">
+    className="book-container book-container-overlay"
+    onClick={[Function]}>
     <img
       className="book-thumbnail book-thumbnail-loading"
-      src="https://covers.openlibrary.org/b/id/295577-M.jpg" />
+      src={undefined} />
     <div
       className="book-detail-container">
       <div
@@ -43,15 +45,16 @@ exports[`test should render <MyBooks /> correctly 1`] = `
       </div>
       <div
         className="book-author">
-        Klio Author Sir
+        Not Found
       </div>
     </div>
   </div>
   <div
-    className="book-container">
+    className="book-container book-container-overlay"
+    onClick={[Function]}>
     <img
       className="book-thumbnail book-thumbnail-loading"
-      src="https://covers.openlibrary.org/b/id/295577-M.jpg" />
+      src={undefined} />
     <div
       className="book-detail-container">
       <div
@@ -66,7 +69,7 @@ exports[`test should render <MyBooks /> correctly 1`] = `
       </div>
       <div
         className="book-author">
-        Olivia Dolo
+        Not Found
       </div>
     </div>
   </div>

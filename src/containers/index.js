@@ -9,27 +9,6 @@ import store from '../store'
 
 import './index.scss'
 
-export const books = [
-  {
-    ISBN: 111,
-    author: 'John Doe',
-    title: 'I am here',
-    thumbnail_url: 'https://covers.openlibrary.org/b/id/295577-M.jpg'
-  },
-  {
-    ISBN: 112,
-    author: 'Klio Author Sir',
-    title: 'Phones will be always be gone',
-    thumbnail_url: 'https://covers.openlibrary.org/b/id/295577-M.jpg'
-  },
-  {
-    ISBN: 113,
-    author: 'Olivia Dolo',
-    title: 'There will be water in the water',
-    thumbnail_url: 'https://covers.openlibrary.org/b/id/295577-M.jpg'
-  }
-]
-
 const RootContainer = props =>
     <Grid>
       <Row>

@@ -39,9 +39,8 @@ const Book = props => {
   )
 }
 
-const MyBooks = props => {
+export const MyBooks = props => {
   const books = props.params.searchText ? props.books : props.mybooks
-  console.log(books, props.params, 'cup')
   if (books.isLoading) {
     return <Loader />
   }
@@ -51,7 +50,13 @@ const MyBooks = props => {
     } else {
       return(
         <div className="books-container">
-          {books.books.map(book => <Book key={book.key}  book={book} searchText={props.params.searchText} dispatch={props.dispatch} />)}
+          {
+            books.books.map(book =>
+              <Book key={book.key} book={book}
+                searchText={props.params.searchText}
+                dispatch={props.dispatch}
+              />)
+          }
         </div>
       )
     }

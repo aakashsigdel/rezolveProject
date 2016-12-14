@@ -33,16 +33,22 @@ exports[`test should render <Header /> correctly 1`] = `
         <input
           className="form-control"
           id={undefined}
+          onChange={[Function]}
           placeholder="Search"
           type="text" />
       </div>
        
-      <button
-        className="btn btn-default"
-        disabled={false}
-        type="submit">
-        Search
-      </button>
+      <a
+        onClick={[Function]}
+        style={Object {}}>
+        <button
+          className="btn btn-default"
+          disabled={false}
+          onClick={[Function]}
+          type="button">
+          Search
+        </button>
+      </a>
     </div>
     <div
       className="pull-right user-container">

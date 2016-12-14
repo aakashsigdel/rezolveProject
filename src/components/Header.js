@@ -7,7 +7,7 @@ import { searchBooks } from '../actions/books'
 
 import './Header.scss'
 
-const Header = (props) =>
+export const Header = (props) =>
   <Navbar>
     <Navbar.Header>
       <Navbar.Brand>
