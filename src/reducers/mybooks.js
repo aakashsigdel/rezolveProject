@@ -6,14 +6,20 @@ export const initialState = {
 
 const mybooks = (state = initialState, action) => {
   switch (action.type) {
-    case 'ADD_BOOK':
-      return {
-        ...state,
-        books: [
-          ...state.books,
-          action.book
-        ]
+    case 'ADD_BOOK': {
+      const booksInStore = state.books.filter(book => book.key === action.book.key)
+      if (booksInStore.length === 0) {
+        return {
+          ...state,
+          books: [
+            ...state.books,
+            action.book
+          ]
+        }
+      } else {
+        return state
       }
+    }
     case 'REMOVE_BOOK':
       return {
         ...state,
