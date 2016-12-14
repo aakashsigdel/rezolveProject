@@ -1,4 +1,4 @@
-const initialState = {
+export const initialState = {
   isLoading: false,
   error: null,
   books: []
@@ -17,7 +17,7 @@ const mybooks = (state = initialState, action) => {
     case 'REMOVE_BOOK':
       return {
         ...state,
-        books: state.books.filter(book => book.key === action.key)
+        books: state.books.filter(book => book.key !== action.key)
       }
     default:
       return state
