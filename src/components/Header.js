@@ -1,5 +1,9 @@
 import React from 'react'
+import { connect } from 'react-redux'
+import { Link } from 'react-router'
 import { NavItem, Button, Nav, Navbar, FormGroup, FormControl } from 'react-bootstrap'
+import { searchChangeText } from '../actions/search'
+import { searchBooks } from '../actions/books'
 
 import './Header.scss'
 
@@ -13,10 +17,18 @@ const Header = (props) =>
     </Navbar.Header>
       <Navbar.Form pullLeft>
         <FormGroup>
-          <FormControl type="text" placeholder="Search" />
+          <FormControl
+            type="text"
+            placeholder="Search"
+            onChange={e => props.dispatch(searchChangeText(e.target.value))}
+          />
         </FormGroup>
         {' '}
-        <Button type="submit">Search</Button>
+        <Link to={"/search/" + props.searchText}>
+          <Button onClick={() => props.dispatch(searchBooks(props.searchText))}>
+            Search
+          </Button>
+        </Link>
       </Navbar.Form>
       <div className="pull-right user-container">
         <div className="profile-picture" />
@@ -31,4 +43,4 @@ const Header = (props) =>
       </div>
   </Navbar>
 
-export default Header
+export default connect(state => state.search)(Header)

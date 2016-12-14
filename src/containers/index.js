@@ -30,8 +30,6 @@ export const books = [
   }
 ]
 
-store.dispatch(searchBooks('lord of the rings'))
-
 const RootContainer = props =>
     <Grid>
       <Row>

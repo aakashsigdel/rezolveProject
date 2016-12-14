@@ -1,8 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-
-//FIXME delete this use data from store
-import { books } from '../containers'
+import { addBook } from '../actions/books'
 
 import './MyBooks.scss'
 
@@ -20,35 +18,45 @@ const EmptyResult = () =>
     </div>
   </div>
 
-const Book = props =>
-  <div className="book-container">
-    <img src={props.cover_image} className="book-thumbnail book-thumbnail-loading" />
-    <div className="book-detail-container">
-      <div className="book-title-container">
-        <div className="book-title">{titleFormat(props.title)}</div>
-        <img src="../../images/dots.png" className="book-title-dots" />
-      </div>
-      <div className="book-author">{props.author_name ? props.author_name : 'Not Found'}</div>
-    </div>
-  </div>
-
-  const MyBooks = props => {
-    const books = props.params.search ? props.books : props.mybooks
-    if (books.isLoading) {
-      return <Loader />
+    const handleBookClick = props => {
+      return props.searchText ? props.dispatch(addBook(props.book)) : null
     }
-    else {
-      if (books.books.length === 0) {
-        return <EmptyResult />
-      } else {
-        return(
-          <div className="books-container">
-            {books.books.map(book => <Book key={book.key}  {...book} />)}
-          </div>
-        )
-      }
+const Book = props => {
+  const bookContainerClass = props.searchText
+    ? "book-container book-container-overlay"
+    : "book-container"
+  return (
+    <div className={bookContainerClass} onClick={() => handleBookClick(props)}>
+      <img src={props.book.cover_image} className="book-thumbnail book-thumbnail-loading" />
+      <div className="book-detail-container">
+        <div className="book-title-container">
+          <div className="book-title">{titleFormat(props.book.title)}</div>
+          <img src="../../images/dots.png" className="book-title-dots" />
+        </div>
+        <div className="book-author">{props.book.author_name ? props.book.author_name : 'Not Found'}</div>
+      </div>
+    </div>
+  )
+}
+
+const MyBooks = props => {
+  const books = props.params.searchText ? props.books : props.mybooks
+  console.log(books, props.params, 'cup')
+  if (books.isLoading) {
+    return <Loader />
+  }
+  else {
+    if (books.books.length === 0) {
+      return <EmptyResult />
+    } else {
+      return(
+        <div className="books-container">
+          {books.books.map(book => <Book key={book.key}  book={book} searchText={props.params.searchText} dispatch={props.dispatch} />)}
+        </div>
+      )
     }
   }
+}
 
 const mapStateToProps = state => ({ ...state })
 

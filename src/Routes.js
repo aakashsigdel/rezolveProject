@@ -9,6 +9,7 @@ const Routes = () =>
     <Route path="/" component={RootContainer}>
       <IndexRoute component={MyBooks} />
       <Route path="/charts" componet={Charts} />
+      <Route path="/search/:searchText" component={MyBooks} />
     </Route>
   </Router>
 
