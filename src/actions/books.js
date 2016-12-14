@@ -28,3 +28,8 @@ const receiveBooks = books => ({
   type: 'RECEIVE_BOOKS',
   books: pickKeyForBooks(books)
 })
+
+export const addBook = book => ({
+  type: 'ADD_BOOK',
+  book
+})

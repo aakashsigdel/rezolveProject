@@ -9,6 +9,7 @@ const books = (state = initialState, action) => {
     case 'SEARCH_BOOKS_REQUEST':
       return {
         ...state,
+        books: [],
         isLoading: true
       }
     case 'RECEIVE_BOOKS':
