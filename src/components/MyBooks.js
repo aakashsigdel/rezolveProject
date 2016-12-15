@@ -4,24 +4,25 @@ import { addBook } from '../actions/books'
 
 import './MyBooks.scss'
 
-const titleFormat = title => title.length > 22 ? title.slice(0, 19) + '...' : title
+export const titleFormat = title => title.length > 22 ? title.slice(0, 19) + '...' : title
 
-const Loader = () =>
+export const Loader = () =>
   <div className="loader">
     <img src={'../../images/loading.gif'} className="loader-image" />
   </div>
 
-const EmptyResult = () =>
+export const EmptyResult = () =>
   <div className="books-container">
     <div className="book-not-found">
       0 books here! Search for a book from the search bar
     </div>
   </div>
 
-    const handleBookClick = props => {
-      return props.searchText ? props.dispatch(addBook(props.book)) : null
-    }
-const Book = props => {
+const handleBookClick = props => {
+  return props.searchText ? props.dispatch(addBook(props.book)) : null
+}
+
+export const Book = props => {
   const bookContainerClass = props.searchText
     ? "book-container book-container-overlay"
     : "book-container"

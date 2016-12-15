@@ -1,5 +1,5 @@
 import React from 'react'
-import { MyBooks } from '../../src/components/MyBooks'
+import { Book, EmptyResult, Loader, MyBooks, titleFormat } from '../../src/components/MyBooks'
 
 import renderer from 'react-test-renderer'
 
@@ -24,10 +24,39 @@ export const books = {books: [
   }
 ]}
 
-it('should render <MyBooks /> correctly', () => {
-  const tree = renderer.create(
-    <MyBooks books={books} params={{searchText: "hello"}} />
-  ).toJSON()
+describe('<MyBooks /> component', () => {
+  it('should render <MyBooks /> correctly', () => {
+    const tree = renderer.create(
+      <MyBooks books={books} params={{searchText: "hello"}} />
+    ).toJSON()
 
-  expect(tree).toMatchSnapshot()
+    expect(tree).toMatchSnapshot()
+  })
+
+  it('should render <Book /> correctly', () => {
+    const tree = renderer.create(
+      <Book book={books.books[0]} searchText={'hello'} />
+    ).toJSON()
+
+    expect(tree).toMatchSnapshot()
+  })
+
+  it('should render <Loader /> correctly', () => {
+    const tree = renderer.create(<Loader />).toJSON()
+
+    expect(tree).toMatchSnapshot()
+  })
+
+  it('should render <EmptyResult /> correctly', () => {
+    const tree = renderer.create(<EmptyResult />).toJSON()
+
+    expect(tree).toMatchSnapshot()
+  })
+
+  it('should format title correctly', () => {
+    const title = 'this is a long string with more than 22 chars'
+    const expectedTitle = title.slice(0, 19) + '...'
+
+    expect(titleFormat(title)).toEqual(expectedTitle)
+  })
 })

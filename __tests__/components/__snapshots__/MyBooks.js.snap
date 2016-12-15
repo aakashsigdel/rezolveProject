@@ -1,4 +1,50 @@
-exports[`test should render <MyBooks /> correctly 1`] = `
+exports[`<MyBooks /> component should render <Book /> correctly 1`] = `
+<div
+  className="book-container book-container-overlay"
+  onClick={[Function]}>
+  <img
+    className="book-thumbnail book-thumbnail-loading"
+    src={undefined} />
+  <div
+    className="book-detail-container">
+    <div
+      className="book-title-container">
+      <div
+        className="book-title">
+        I am here
+      </div>
+      <img
+        className="book-title-dots"
+        src="../../images/dots.png" />
+    </div>
+    <div
+      className="book-author">
+      Not Found
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<MyBooks /> component should render <EmptyResult /> correctly 1`] = `
+<div
+  className="books-container">
+  <div
+    className="book-not-found">
+    0 books here! Search for a book from the search bar
+  </div>
+</div>
+`;
+
+exports[`<MyBooks /> component should render <Loader /> correctly 1`] = `
+<div
+  className="loader">
+  <img
+    className="loader-image"
+    src="../../images/loading.gif" />
+</div>
+`;
+
+exports[`<MyBooks /> component should render <MyBooks /> correctly 1`] = `
 <div
   className="books-container">
   <div

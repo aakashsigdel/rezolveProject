@@ -5,7 +5,7 @@ import { searchBooks } from '../actions/books'
 
 import './RightNav.scss'
 
-const RecentSearch = props =>
+export const RecentSearch = props =>
   <Link to={"/search/" + props.searchText}
     className="recent-search"
     activeClassName="recent-search-link-active"
