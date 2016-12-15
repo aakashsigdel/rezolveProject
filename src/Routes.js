@@ -8,7 +8,7 @@ const Routes = () =>
   <Router history={browserHistory}>
     <Route path="/" component={RootContainer}>
       <IndexRoute component={MyBooks} />
-      <Route path="/charts" componet={Charts} />
+      <Route path="/charts" component={Charts} />
       <Route path="/search" component={MyBooks}>
         <Route path="/search/:searchText" component={MyBooks} />
       </Route>

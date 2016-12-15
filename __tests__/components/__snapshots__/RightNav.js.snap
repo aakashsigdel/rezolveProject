@@ -7,31 +7,22 @@ exports[`test should render <RightNav /> correctly 1`] = `
   </div>
   <div>
     <a
+      className="recent-search"
       onClick={[Function]}
       style={Object {}}>
-      <div
-        className="recent-search"
-        onClick={[Function]}>
-        Sun
-      </div>
+      Sun
     </a>
     <a
+      className="recent-search"
       onClick={[Function]}
       style={Object {}}>
-      <div
-        className="recent-search"
-        onClick={[Function]}>
-        Moon
-      </div>
+      Moon
     </a>
     <a
+      className="recent-search"
       onClick={[Function]}
       style={Object {}}>
-      <div
-        className="recent-search"
-        onClick={[Function]}>
-        Earth
-      </div>
+      Earth
     </a>
   </div>
 </div>

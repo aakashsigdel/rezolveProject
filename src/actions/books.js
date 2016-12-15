@@ -36,5 +36,5 @@ const receiveBooks = books => ({
 
 export const addBook = book => ({
   type: 'ADD_BOOK',
-  book
+  book: {...book, addDate: Date.now()}
 })

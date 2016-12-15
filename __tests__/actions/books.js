@@ -42,7 +42,7 @@ describe('books actions', () => {
   })
 
   it('should create an action to add a book', () => {
-    const book = {}
+    const book = {addDate: Date.now()}
     const expectedAction = {
       type: 'ADD_BOOK',
       book

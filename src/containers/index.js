@@ -4,8 +4,6 @@ import Header from '../components/Header'
 import RightNav from '../components/RightNav'
 import MyBooks from '../components/MyBooks'
 import BookChartNav from '../components/BookChartNav'
-import { searchBooks } from '../actions/books'
-import store from '../store'
 
 import './index.scss'
 

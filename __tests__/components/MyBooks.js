@@ -3,7 +3,7 @@ import { MyBooks } from '../../src/components/MyBooks'
 
 import renderer from 'react-test-renderer'
 
-const books = {books: [
+export const books = {books: [
   {
     key: 111,
     author: 'John Doe',

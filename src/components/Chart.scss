@@ -1,0 +1,15 @@
+@import '../variables';
+
+.chart-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.chart-label {
+  margin-top: 10px;
+  color: $active;
+  font-size: 18px;
+  font-weight: bold;
+}
