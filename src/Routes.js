@@ -12,6 +12,7 @@ const Routes = () =>
       <Route path="/search" component={MyBooks}>
         <Route path="/search/:searchText" component={MyBooks} />
       </Route>
+      <Route path="*" component={MyBooks} />
     </Route>
   </Router>
 
