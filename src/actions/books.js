@@ -5,7 +5,11 @@ export const searchBooks = searchText => {
   return (dispatch, getState) => {
     dispatch(searchBooksRequest(searchText))
     return Api.searchBooks(searchText)
-      .then(json => dispatch(receiveBooks(json)))
+      .then(r => r.fold(
+        error => ({ type: 'SEARCH_BOOKS_ERROR', error }),
+        json => receiveBooks(json)
+      ))
+      .then(dispatch)
   }
 }
 

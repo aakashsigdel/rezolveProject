@@ -1,9 +1,44 @@
 import fetch from 'isomorphic-fetch'
+import { compose } from 'ramda'
+import { Left, Right } from './either'
 
 export const API_HOST = 'https://openlibrary.org'
 
+const rejectHTTPErrors = minimumErrorStatus => response => {
+  if (response.status > minimumErrorStatus) {
+    return Left({
+      type: 'status_error',
+      status: response.status,
+      msg: `Got ${response.status}`,
+      response
+    })
+  }
+
+  return Right(response)
+}
+
+const parseJSON = res => {
+  // no content
+  if (res.status === 204) {
+    return Promise.resolve({})
+  }
+
+  return res.json()
+}
+
+const mapJSONError = p => p.then(
+  Right,
+  error => Left({
+    type: 'json_error',
+    msg: 'Unable to parse response',
+    error
+  })
+)
+
+
+
 class Api {
-  _basicRequest = path => {
+  _basicRequest = (path, minimumErrorStatus = 400) => {
     const request = {
       method: 'GET',
       headers: {
@@ -13,16 +48,26 @@ class Api {
     }
 
     return fetch(API_HOST + path, request)
-            .then(response => response.json(), this.handleErrors)
-            .catch(this.handleErrors)
+      .then(
+        Right,
+        error => {
+          console.log(error)
+          return Left({
+            type: 'network_error',
+            msg: error.message,
+            error
+          })
+        })
+      .then(r => r.chain(rejectHTTPErrors(minimumErrorStatus)))
   }
 
-  _handleErrors = error => {
-    console.log(error)
+  _jsonRequest = path => {
+    return this._basicRequest(path)
+      .then(r => r.chain(compose(mapJSONError, parseJSON)))
   }
 
   searchBooks = searchText => {
-    return this._basicRequest('/search.json?q=' + searchText)
+    return this._jsonRequest('/search.json?q=' + searchText)
   }
 }
 
