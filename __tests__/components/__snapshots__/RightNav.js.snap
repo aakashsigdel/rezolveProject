@@ -1,13 +1,4 @@
-exports[`<RightNav /> component should render <RecentSearch /> correctly 1`] = `
-<a
-  className="recent-search"
-  onClick={[Function]}
-  style={Object {}}>
-  Hello
-</a>
-`;
-
-exports[`<RightNav /> component should render <RightNav /> correctly 1`] = `
+exports[`<LeftNav /> component should render <LeftNav /> correctly 1`] = `
 <div
   className="recent-searches">
   <div
@@ -35,4 +26,13 @@ exports[`<RightNav /> component should render <RightNav /> correctly 1`] = `
     </a>
   </div>
 </div>
+`;
+
+exports[`<LeftNav /> component should render <RecentSearch /> correctly 1`] = `
+<a
+  className="recent-search"
+  onClick={[Function]}
+  style={Object {}}>
+  Hello
+</a>
 `;

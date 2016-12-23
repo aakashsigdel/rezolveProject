@@ -1,13 +1,13 @@
 import React from 'react'
-import { RecentSearch, RightNav } from '../../src/components/RightNav'
+import { RecentSearch, LeftNav } from '../../src/components/LeftNav'
 
 import renderer from 'react-test-renderer'
 
-describe('<RightNav /> component', () => {
-  it('should render <RightNav /> correctly', () => {
+describe('<LeftNav /> component', () => {
+  it('should render <LeftNav /> correctly', () => {
     const recentSearches = ['sun', 'moon', 'earth']
     const tree = renderer.create(
-      <RightNav recentSearches={recentSearches} />
+      <LeftNav recentSearches={recentSearches} />
     ).toJSON()
 
     expect(tree).toMatchSnapshot()

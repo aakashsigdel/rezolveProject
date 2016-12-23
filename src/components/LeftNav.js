@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { Link } from 'react-router'
 import { searchBooks } from '../actions/books'
 
-import './RightNav.scss'
+import './LeftNav.scss'
 
 export const RecentSearch = props =>
   <Link to={"/search/" + props.searchText}
@@ -14,7 +14,7 @@ export const RecentSearch = props =>
     {props.searchText.charAt(0).toUpperCase() + props.searchText.slice(1)}
   </Link>
 
-export const RightNav = props =>
+export const LeftNav = props =>
   <div className="recent-searches">
     <div className="title">{'RECENT SEARCHES'}</div>
     <div>
@@ -32,4 +32,4 @@ export const RightNav = props =>
 
 const mapStateToProps = state => state.search
 
-export default connect(mapStateToProps)(RightNav)
+export default connect(mapStateToProps)(LeftNav)
