@@ -1,4 +1,5 @@
 import { assoc, compose, map, omit, pick, prop, slice } from 'ramda'
+import { searchBooksError } from './error'
 import Api from '../api'
 
 export const searchBooks = searchText => {
@@ -6,7 +7,7 @@ export const searchBooks = searchText => {
     dispatch(searchBooksRequest(searchText))
     return Api.searchBooks(searchText)
       .then(r => r.fold(
-        error => ({ type: 'SEARCH_BOOKS_ERROR', error }),
+        searchBooksError,
         json => receiveBooks(json)
       ))
       .then(dispatch)

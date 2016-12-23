@@ -18,6 +18,16 @@ const books = (state = initialState, action) => {
         books: action.books,
         isLoading: false
       }
+    case 'SEARCH_BOOKS_ERROR':
+      return {
+        ...state,
+        error: action.error
+      }
+    case 'CLEAR_ERROR':
+      return {
+        ...state,
+        error: null
+      }
     default:
       return state
   }

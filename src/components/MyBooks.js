@@ -45,22 +45,21 @@ export const MyBooks = props => {
   if (books.isLoading) {
     return <Loader />
   }
-  else {
-    if (books.books.length === 0) {
-      return <EmptyResult />
-    } else {
-      return(
-        <div className="books-container">
-          {
-            books.books.map(book =>
-              <Book key={book.key} book={book}
-                searchText={props.params.searchText}
-                dispatch={props.dispatch}
-              />)
-          }
-        </div>
-      )
-    }
+
+  if (books.books.length === 0) {
+    return <EmptyResult />
+  } else {
+    return(
+      <div className="books-container">
+        {
+          books.books.map(book =>
+            <Book key={book.key} book={book}
+              searchText={props.params.searchText}
+              dispatch={props.dispatch}
+            />)
+        }
+      </div>
+    )
   }
 }
 
