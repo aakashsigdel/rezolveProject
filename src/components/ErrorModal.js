@@ -21,5 +21,4 @@ const ErrorModal = props =>
     </div>
   </div>
 
-const mapStateToProps = state => state.search
-export default connect()(ErrorModal)
+export default ErrorModal

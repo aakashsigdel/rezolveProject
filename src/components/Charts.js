@@ -2,6 +2,8 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { FormGroup, ControlLabel, FormControl, optopn } from 'react-bootstrap'
 const LineChart = require("react-chartjs").Line
+import { pick } from 'ramda'
+
 import { changeChartYear } from '../actions/chart'
 
 import './Chart.scss'
@@ -41,18 +43,16 @@ const getChartData = (mybooks, year) => {
       pointHoverBorderWidth: 2,
       pointRadius: 1,
       pointHitRadius: 10,
-      data: booksCount,
+      data: booksCount, // inserting booksCount here
       spanGaps: false
     }]
   }
 }
 
-const handleSelectChange = (e, props) => {
-  const value = e.target.value
-  if (value === 'select')
-    return
-  props.dispatch(changeChartYear(Number(value)))
-}
+const handleSelectChange = (e, props) =>
+  e.target.value !== 'select'
+    ? props.dispatch(changeChartYear(Number(e.target.value)))
+    : null
 
 const Charts = props =>
   <div className="chart-container">
@@ -64,12 +64,12 @@ const Charts = props =>
         <option value="2015">2015</option>
       </FormControl>
     </FormGroup>
-    <LineChart data={getChartData(props.books, props.year)} width="600" height="350" />
+    <LineChart data={getChartData(props.mybooks.books, props.chart.year)} width="600" height="350" />
     <div className="chart-label">
-      {'Books Read in ' + props.year}
+      {'Books Read in ' + props.chart.year}
     </div>
   </div>
 
-const mapStateToProps = state => ({...state.mybooks, ...state.chart})
+const mapStateToProps = pick(['mybooks', 'chart'])
 
 export default connect(mapStateToProps)(Charts)

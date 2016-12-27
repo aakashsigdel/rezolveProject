@@ -5,9 +5,9 @@ import renderer from 'react-test-renderer'
 
 describe('<LeftNav /> component', () => {
   it('should render <LeftNav /> correctly', () => {
-    const recentSearches = ['sun', 'moon', 'earth']
+    const search = {recentSearches: ['sun', 'moon', 'earth']}
     const tree = renderer.create(
-      <LeftNav recentSearches={recentSearches} />
+      <LeftNav search={search} />
     ).toJSON()
 
     expect(tree).toMatchSnapshot()

@@ -5,7 +5,7 @@ import renderer from 'react-test-renderer'
 
 it('should render <Header /> correctly', () => {
   const tree = renderer.create(
-    <Header />
+    <Header search={{searchText: 'hello'}} mybooks={{books: []}}/>
   ).toJSON()
 
   expect(tree).toMatchSnapshot()

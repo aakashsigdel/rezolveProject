@@ -62,7 +62,7 @@ exports[`test should render <Header /> correctly 1`] = `
         </div>
         <div
           className="books-number">
-          10 books
+          0 books
         </div>
       </div>
     </div>

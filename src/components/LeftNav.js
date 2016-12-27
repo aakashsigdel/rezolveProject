@@ -1,6 +1,8 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router'
+import { pick } from 'ramda'
+
 import { searchBooks } from '../actions/books'
 
 import './LeftNav.scss'
@@ -19,7 +21,7 @@ export const LeftNav = props =>
     <div className="title">{'RECENT SEARCHES'}</div>
     <div>
       {
-        props.recentSearches.map((item, index) =>
+        props.search.recentSearches.map((item, index) =>
           <RecentSearch
             key={index}
             searchText={item}
@@ -30,6 +32,6 @@ export const LeftNav = props =>
     </div>
   </div>
 
-const mapStateToProps = state => state.search
+const mapStateToProps = pick(['search'])
 
 export default connect(mapStateToProps)(LeftNav)
