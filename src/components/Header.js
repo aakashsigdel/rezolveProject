@@ -10,7 +10,7 @@ import { searchWillSearch } from '../actions/search'
 
 import './Header.scss'
 
-const  handleSearch = (props) => {
+export const  handleSearch = (props) => {
   props.dispatch(searchBooks(props.search.searchText))
   props.dispatch(searchWillSearch(props.search.searchText))
 }

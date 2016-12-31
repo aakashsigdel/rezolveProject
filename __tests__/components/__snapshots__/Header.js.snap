@@ -1,4 +1,4 @@
-exports[`test should render <Header /> correctly 1`] = `
+exports[`<Header /> component should render <Header /> correctly 1`] = `
 <nav
   className="navbar navbar-default">
   <div
