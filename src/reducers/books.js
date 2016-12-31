@@ -27,8 +27,6 @@ const books = (state = initialState, action) => {
         ...state,
         error: null
       }
-    default:
-      return state
   }
 
   return state

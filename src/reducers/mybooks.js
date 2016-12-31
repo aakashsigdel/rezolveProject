@@ -7,7 +7,7 @@ export const initialState = {
   books: []
 }
 
-const findBookInStore = (books, book) =>
+export const findBookInStore = (books, book) =>
   fromNullable(books.find(b => b.key === book.key))
 
 const mybooks = (state = initialState, action) => {
@@ -25,8 +25,6 @@ const mybooks = (state = initialState, action) => {
         ...state,
         books: state.books.filter(book => book.key !== action.key)
       }
-    default:
-      return state
   }
 
   return state

@@ -19,8 +19,6 @@ const search = (state = initialState, action) => {
         recentSearches
       }
     }
-    default:
-      return state
   }
 
   return state

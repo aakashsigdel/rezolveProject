@@ -27,4 +27,21 @@ describe('books reducer', () => {
       error: null
     })
   })
+
+  it('should handle SEARCH_BOOKS_ERROR', () => {
+    const error = {type: 'json_error', msg: 'unable to parse response'}
+    expect(reducer(initialState, {
+      type: 'SEARCH_BOOKS_ERROR',
+      error
+    })).toEqual({
+      ...initialState,
+      error
+    })
+  })
+
+  it('should handle CLEAR_ERROR', () => {
+    expect(reducer(initialState, {
+      type: 'CLEAR_ERROR'
+    })).toEqual(initialState)
+  })
 })
